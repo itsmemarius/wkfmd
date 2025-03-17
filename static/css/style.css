@@ -1,0 +1,38 @@
+/* Ensure video fills the entire viewport */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    object-fit: cover; /* Crop video to fit screen */
+    z-index: -1; /* Send video to the background */
+}
+
+.register-btn {
+    position: absolute;
+    top: 70%;  /* Changed from 50% to move down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    padding: 10px 26px;  /* Slightly larger padding */
+    font-size: 28px;  /* Slightly smaller font */
+    cursor: pointer;  /* Add pointer cursor */
+    
+    /* Existing styles below */
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 30px;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+    background: rgba(255, 255, 255, 0.25);  /* Subtle hover effect */
+    transform: translate(-50%, -50%) scale(1.05);  /* Gentle scale effect */
+}
