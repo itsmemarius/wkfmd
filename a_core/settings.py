@@ -17,7 +17,7 @@ from environ import Env
 
 env  = Env()
 Env.read_env()
-ENVIRONMENT = env('ENVIRONMENT', default= 'production')
+ENVIRONMENT = env('production', default= 'production')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +32,7 @@ ENCRYPTION_KEY = env('ENCRYPT_KEY')
 
 
 # settings.py
-AMPLITUDE_API_KEY = 'your_amplitude_api_key_here'
+AMPLITUDE_API_KEY = env('AMPLITUDE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if ENVIRONMENT == 'development':
