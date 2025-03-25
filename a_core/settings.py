@@ -35,10 +35,7 @@ ENCRYPTION_KEY = env('ENCRYPT_KEY')
 AMPLITUDE_API_KEY = env('AMPLITUDE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if ENVIRONMENT == 'development':
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = True
 
 if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000  # 1 year
@@ -140,11 +137,11 @@ WSGI_APPLICATION = 'a_core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': os.getenv('DATABASE_NAME', 'Garuda'),
-        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'NAME': env('DATABASE_NAME', 'Garuda'),
+        'HOST': env('DATABASE_HOST', 'localhost'),
         'OPTIONS': {
-            'driver': os.getenv('DATABASE_DRIVER', 'ODBC Driver 17 for SQL Server'),
-            'trusted_connection': os.getenv('DATABASE_TRUSTED_CONNECTION', 'yes') == 'yes',
+            'driver': env('DATABASE_DRIVER', 'ODBC Driver 17 for SQL Server'),
+            'trusted_connection': env('DATABASE_TRUSTED_CONNECTION', 'yes') == 'yes',
         },
     }
 }
